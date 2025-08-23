@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box-model</title>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="./style.css" type="text/css">
+    <link rel="icon" href="./favicon_io/favicon-32x32.png" type="image/x-icon">
+</head>
+
+<body>
+
+    <div class="wrappler">
+
+        <!-- mensagem de explicação das propriedades -->
+        <div class="message" id="message">
+            <h2 id="mes_title">a</h2>
+            <button id="mes_close" onclick="closeExplanation()">x</button>
+            <div id="mes_text">a</div>
+        </div>
+
+        <!-- cabeçalho visual da página-->
+        <nav>
+            <h1>Box-model</h1>
+            <h3>Aprendendo como funciona o espaçamento no HTML</h3>
+        </nav>
+
+        <!-- campo que guarda a div do box-model -->
+        <div class="container" id="container">
+            <div class="box-control" id="box-control">
+                <button onclick="fullscreen()" id="btn_fullscreen">
+                    <ion-icon name="expand-outline"></ion-icon>
+                </button>
+            </div>
+            <div class="box" id="box">
+                <ion-icon name="cube-outline"></ion-icon>
+                Box-model
+            </div>
+        </div>
+
+        <!-- menu lateral com inputs -->
+        <div class="menu">
+
+            <div class="menu-control">
+                <h2>Menu</h2>
+                <p>Redimensione as propriedades do box-model</p>
+            </div>
+
+
+            <div class="menu-control">
+                <label for="conteudo" style="color: oklch(0.808 0.114 19.571);">
+                    Content: <a id="lb_conteudo"></a> <button class="info" onclick="showExplanation(1)">?</button>
+                </label>
+                <br>
+                <input type="range" name="conteudo" id="input_conteudo" max="250" min="1" value="100"
+                    onchange="model()">
+            </div>
+
+            <div class="menu-control">
+                <label for="interno" style="color: oklch(0.809 0.105 251.813);">
+                    Padding: <a id="lb_interno"></a> <button class="info" onclick="showExplanation(2)">?</button>
+                </label>
+                <br>
+                <input type="range" name="interno" id="input_interno" max="100" min="0" value="0" onchange="model()">
+            </div>
+
+            <div class="menu-control">
+                <label for="borda" style="color: oklch(0.879 0.169 91.605);">
+                    Border: <a id="lb_borda"></a> <button class="info" onclick="showExplanation(3)">?</button>
+                </label>
+                <br>
+                <input type="range" name="borda" id="input_borda" max="100" min="0" value="0" onchange="model()">
+            </div>
+
+            <div class="menu-control">
+                <label for="margem" style="color: oklch(0.855 0.138 181.071);">
+                    Margin: <a id="lb_margem"></a> <button class="info" onclick="showExplanation(4)">?</button>
+                </label>
+                <br>
+                <input type="range" name="margem" id="input_margem" max="200" min="0" value="0" onchange="model()">
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./script.js"></script>
+
+</html>
